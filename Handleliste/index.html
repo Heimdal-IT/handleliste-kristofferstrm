@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+</head>
+    
+<body>
+<h1>Handleliste</h1>
+Vare: <input id="vare" type="text"> <br> <br>
+<button onclick = "leggtil()">Lagre</button>
+<br>
+<button onclick = "regret()">Angre</button>
+<br>
+<span id="liste"></span>
+    
+<script>
+    let vare = [];
+    function funksjon(){
+         document.getElementById("liste").innerHTML = "";
+        
+        for(let i = 0; i<vare.length; i++){
+            document.getElementById("liste").innerHTML += (i + 1) + ". " + vare[i] + "<br>";
+            console.log(vare);
+        }
+       
+    }
+    function leggtil(){
+        vare.push(document.getElementById("vare").value);
+        funksjon();
+    }
+    function regret(){
+        vare.pop();
+        funksjon();
+        
+    }
+    
+</script>   
+    
+</body>
+    
+</html>
