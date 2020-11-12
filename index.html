@@ -3,37 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    
 </head>
+    
 <body>
-   <div id="liste"></div>
+<h1>Handleliste</h1>
+Vare: <input id="vare" type="text"> <br> <br>
+<button onclick = "leggtil()">Lagre</button>
+<br>
+<button onclick = "regret()">Angre</button>
+<br>
+<span id="liste"></span>
+    
+<script>
+    let vare = [];
+    function funksjon(){
+         document.getElementById("liste").innerHTML = "";
+        
+        for(let i = 0; i<vare.length; i++){
+            document.getElementById("liste").innerHTML += (i + 1) + ". " + vare[i] + "<br>";
+            console.log(vare);
+        }
+       
+    }
+    function leggtil(){
+        vare.push(document.getElementById("vare").value);
+        funksjon();
+    }
+    function regret(){
+        vare.pop();
+        funksjon();
+        
+    }
+    
+</script>   
     
 </body>
-
-<script>
-    let handleliste = ["Maling", "Planker", "Spiker", "Hammer"];
-    handleliste[4] = "Skinke";
-    handleliste.push("Smør");
-    handleliste[3] = "Litago jordbær";
     
-    handleliste.pop();
-    
-    console.log(handleliste.indexOf("Vaskemiddel"));
-    
-    
-
-    /*
-
-    */
-    
-    let listeDiv = document.getElementById("liste");
-    
-        for(let i = 0; i<handleliste.length; i++){
-            
-            listeDiv.innerHTML += handleliste[i] + "<br>";
-    }
- 
-    
-    
-</script>
-
 </html>
